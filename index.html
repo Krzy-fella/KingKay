@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asanteman Luxury Real Estate & Land Acquisition</title>
+    <!-- Tailwind CSS for high-class styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#fbf7ed',
+                            400: '#e6c687',
+                            500: '#d4af37', /* Premium Metallic Gold */
+                            600: '#aa8c2c',
+                        },
+                        dark: '#0a0a0a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and premium typography adjustments */
+        html { scroll-behavior: smooth; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e7c4 0%, #d4af37 50%, #aa8c2c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hero Section Background treatment utilizing image.png */
+        .hero-bg {
+            background: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95)),
+                url('image.png') no-repeat center center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Branding using the golden lion theme -->
+                <span class="text-xl font-bold tracking-widest gold-gradient-text">ASANTEMAN LUXURY</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-medium">
+                <a href="#hero" class="hover:text-gold-500 transition">Home</a>
+                <a href="#marketplace" class="hover:text-gold-500 transition">Properties & Lands</a>
+                <a href="#corporate" class="hover:text-gold-500 transition">Corporate Services</a>
+                <a href="#contact" class="hover:text-gold-500 transition">Inquire</a>
+            </div>
+            <a href="#marketplace" class="border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-dark px-5 py-2 text-xs uppercase tracking-widest font-semibold transition duration-300">
+                Explore Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-bg h-screen flex items-center justify-center pt-16 px-6">
+        <div class="max-w-4xl text-center space-y-6">
+            <p class="text-gold-500 uppercase tracking-widest text-xs md:text-sm font-semibold tracking-widest">Institutional Grade Real Estate — Ghana</p>
+            <h1 class="text-4xl md:text-6xl font-light tracking-tight text-white leading-tight">
+                Secure High-Value Lands & Premium Estates with <span class="gold-gradient-text font-medium">Absolute Veracity</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                Facilitating verified, litigation-free commercial acreage and ultra-luxury residential acquisitions across Accra, Kumasi, and prime coastal zones for global organizations.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#marketplace" class="w-full sm:w-auto bg-gold-500 text-dark font-semibold px-8 py-4 text-sm uppercase tracking-wider hover:bg-gold-600 transition duration-300 text-center">
+                    Browse Inventory
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-transparent border border-white/20 text-white font-semibold px-8 py-4 text-sm uppercase tracking-wider hover:bg-white/5 transition duration-300 text-center">
+                    Corporate Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL ESTATE MARKETPLACE ENGINE -->
+    <section id="marketplace" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6">
+            <div>
+                <p class="text-gold-500 uppercase tracking-widest text-xs font-semibold mb-2">Curated Listings</p>
+                <h2 class="text-3xl font-light text-white tracking-wide">Premium Lands & Properties</h2>
+            </div>
+            
+            <!-- Dynamic Category Filter -->
+            <div class="flex space-x-2 mt-6 md:mt-0 overflow-x-auto pb-2">
+                <button onclick="filterCategory('all')" id="btn-all" class="filter-btn active bg-gold-500 text-dark text-xs uppercase tracking-wider px-4 py-2 font-semibold transition">All</button>
+                <button onclick="filterCategory('land')" id="btn-land" class="filter-btn border border-white/10 hover:border-gold-500 text-gray-400 hover:text-white text-xs uppercase tracking-wider px-4 py-2 font-semibold transition">Commercial Lands</button>
+                <button onclick="filterCategory('residential')" id="btn-residential" class="filter-btn border border-white/10 hover:border-gold-500 text-gray-400 hover:text-white text-xs uppercase tracking-wider px-4 py-2 font-semibold transition">Luxury Residential</button>
+            </div>
+        </div>
+
+        <!-- Property Grid Architecture -->
+        <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- JavaScript dynamically renders fully functional asset data cards here -->
+        </div>
+    </section>
+
+    <!-- CORPORATE SERVICES SECTION -->
+    <section id="corporate" class="bg-gradient-to-b from-dark to-[#121212] py-24 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <p class="text-gold-500 uppercase tracking-widest text-xs font-semibold">Institutional Assurance</p>
+                <h2 class="text-3xl md:text-4xl font-light text-white tracking-wide">Tailored Asset Acquisition for Organizations</h2>
+                <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                    We eliminate the typical bottlenecks associated with land purchasing in Ghana. Our corporate framework guarantees title-cleared, non-litigation zoning structures meticulously vetted by legal experts.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                    <div class="p-4 bg-white/5 border border-white/5 rounded-sm">
+                        <h4 class="text-gold-400 font-medium text-sm mb-1">Due Diligence Vetting</h4>
+                        <p class="text-gray-400 text-xs">Direct API synchronization with the Lands Commission of Ghana for instantaneous deed and title structural validation.</p>
+                    </div>
+                    <div class="p-4 bg-white/5 border border-white/5 rounded-sm">
+                        <h4 class="text-gold-400 font-medium text-sm mb-1">Escrow Protections</h4>
+                        <p class="text-gray-400 text-xs">Institutional funds are held securely under legal multi-signature structures until title deed conversion protocols finish.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Interactive Visual Feature Container Mocking Game-Engine Precision Layout -->
+            <div class="relative h-[350px] bg-white/5 border border-white/10 flex flex-col justify-center items-center text-center p-8 overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center opacity-20 filter grayscale transition duration-700 group-hover:scale-105" style="background-image: url('image.png');"></div>
+                <div class="relative z-10 space-y-4">
+                    <div class="w-16 h-16 rounded-full border border-gold-500/30 flex items-center justify-center mx-auto bg-dark">
+                        <svg class="w-6 h-6 text-gold-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2m0 18l6-3m-6 3V2m6 15l5.447 2.724a1 1 0 001.447-.894V5.618a1 1 0 00-.553-.894L15 2m0 15V2m0 0L9 2"></path></svg>
+                    </div>
+                    <h3 class="text-white font-medium tracking-wide">3D Land Topography Engines</h3>
+                    <p class="text-gray-400 text-xs max-w-sm mx-auto">
+                        Leveraging high-fidelity spatial telemetry maps to inspect site conditions, layout boundaries, and geographic infrastructure vectors remotely.
+                    </p>
+                    <span class="inline-block text-gold-500 text-xs tracking-widest uppercase font-semibold pt-2">System Operational</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLY FUNCTIONAL LEAD INTERCEPTOR & CONTACT ENGINE -->
+    <section id="contact" class="py-24 px-6 max-w-3xl mx-auto">
+        <div class="text-center space-y-4 mb-12">
+            <p class="text-gold-500 uppercase tracking-widest text-xs font-semibold">Procurement Intake</p>
+            <h2 class="text-3xl font-light text-white tracking-wide">Initiate Corporate Acquisition</h2>
+            <p class="text-gray-400 text-sm">Submit your asset criteria. An executive allocation officer will respond with comprehensive dossiers within 12 business hours.</p>
+        </div>
+
+        <form id="acquisitionForm" onsubmit="handleFormSubmission(event)" class="space-y-6 bg-white/5 p-8 border border-white/10 rounded-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Organization Name</label>
+                    <input type="text" required class="w-full bg-dark border border-white/20 focus:border-gold-500 text-white px-4 py-3 text-sm rounded-none outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Official Corporate Email</label>
+                    <input type="email" required class="w-full bg-dark border border-white/20 focus:border-gold-500 text-white px-4 py-3 text-sm rounded-none outline-none transition">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Target Asset Configuration</label>
+                <select class="w-full bg-dark border border-white/20 focus:border-gold-500 text-white px-4 py-3 text-sm rounded-none outline-none transition">
+                    <option value="commercial-land">Commercial Acreage / Greenfield Land</option>
+                    <option value="industrial-zone">Industrial & Logistics Zoning</option>
+                    <option value="residential-portfolio">High-End Residential Master-Developments</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Capital Allocation Budgetary Tier</label>
+                <select class="w-full bg-dark border border-white/20 focus:border-gold-500 text-white px-4 py-3 text-sm rounded-none outline-none transition">
+                    <option value="tier-1">$250,000 – $1,000,000 USD</option>
+                    <option value="tier-2">$1,000,000 – $5,000,000 USD</option>
+                    <option value="tier-3">$5,000,000 USD +</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-medium">Detailed Acquisition Specifications</label>
+                <textarea rows="4" required placeholder="Specify geographic preference (e.g., Cantonments, Airport Residential, Tema Industrial Zone, Prampram Beachfront Portfolio)..." class="w-full bg-dark border border-white/20 focus:border-gold-500 text-white px-4 py-3 text-sm rounded-none outline-none transition"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-dark font-semibold py-4 text-xs uppercase tracking-widest transition duration-300">
+                Submit Formal Procurement Request
+            </button>
+        </form>
+        
+        <!-- Interactive Success Notification Module -->
+        <div id="successToast" class="hidden mt-6 p-4 bg-emerald-950/80 border border-emerald-500 text-emerald-200 text-sm text-center">
+            System Payload Dispatched successfully. Your procurement case code has been generated and queued for review.
+        </div>
+    </section>
+
+    <!-- FOOTER ARCHITECTURE -->
+    <footer class="border-t border-white/10 bg-dark py-8 px-6 text-center text-xs text-gray-500 tracking-wider uppercase">
+        <p>&copy; 2026 Asanteman Luxury Systems. Engineered for Enterprise Architectural Compliance.</p>
+    </footer>
+
+    <!-- FUNCTIONAL APPLICATION LOGIC JAVASCRIPT ENGINE -->
+    <script>
+        // High-Class Real Estate Data Object Model Mocking Backend Ecosystem
+        const propertiesDatabase = [
+            {
+                id: 1,
+                title: "Cantonments Institutional Acreage",
+                type: "land",
+                location: "Cantonments, Accra",
+                price: "$2,450,000 USD",
+                size: "2.5 Commercial Acres",
+                features: ["Litigation-Free Guarantee", "Zoned for Commercial/High-Rise Office Tower Development"],
+                img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                title: "The Golden Crest Villa Estate",
+                type: "residential",
+                location: "Airport Residential Area, Accra",
+                price: "$4,200,000 USD",
+                size: "6 Bed | 7.5 Bath Structural Layout",
+                features: ["State-Of-The-Art Security Infrastructure", "Infinity Pool Matrix & Integrated Private Cinema Room"],
+                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                title: "Tema Industrial Shipping Port Plot",
+                type: "land",
+                location: "Free Zones Enclave, Tema",
+                price: "$5,100,000 USD",
+                size: "12.8 Industrial Development Acres",
+                features: ["Direct Deep-Water Port Transit Logistics Access Lines", "Pre-Cleared Architectural Grade Environmental Passes"],
+                img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                title: "East Legon Elite Diplomatic Complex",
+                type: "residential",
+                location: "East Legon, Accra",
+                price: "$1,850,000 USD",
+                size: "4 Bed | 4.5 Bath Smart Home Suite",
+                features: ["Solar-Grid Battery Arrays Built-In", "Biometric Air-Lock Access Gates"],
+                img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                title: "Prampram Commercial Coastal Zoning",
+                type: "land",
+                location: "Prampram Waterfront Frontier",
+                price: "$850,000 USD",
+                size: "5.0 Master-Planned Beachfront Acres",
+                features: ["Perfect Resort Development Profile", "Complete Marine Dynamic Survey Documentation Included"],
+                img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Core Render Functionality
+        function renderProperties(data) {
+            const grid = document.getElementById('property-grid');
+            grid.innerHTML = ''; // Clean old nodes
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white/5 border border-white/10 overflow-hidden hover:border-gold-500/50 transition duration-300 group";
+                
+                card.innerHTML = `
+                    <div class="relative h-64 overflow-hidden bg-neutral-900">
+                        <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-105">
+                        <span class="absolute top-4 right-4 bg-dark/90 text-gold-500 border border-gold-500/30 text-[10px] uppercase tracking-widest font-bold px-3 py-1">
+                            ${item.type.toUpperCase()}
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-1">
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">${item.location}</p>
+                            <h3 class="text-xl font-light text-white tracking-wide">${item.title}</h3>
+                        </div>
+                        <div class="flex justify-between items-center text-xs text-gray-400 font-mono border-y border-white/10 py-2">
+                            <span>SCALE: ${item.size}</span>
+                        </div>
+                        <ul class="text-[11px] text-gray-400 space-y-1 list-disc list-inside">
+                            ${item.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-lg font-medium text-gold-400 font-mono">${item.price}</span>
+                            <a href="#contact" class="text-[10px] uppercase tracking-widest font-bold text-white border-b border-gold-500 pb-1 hover:text-gold-500 transition">Request Dossier</a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Functional Filter System Engine
+        function filterCategory(category) {
+            // Manage active button stylings
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn border border-white/10 text-gray-400 text-xs uppercase tracking-wider px-4 py-2 font-semibold transition";
+            });
+            
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if(activeBtn) {
+                activeBtn.className = "filter-btn active bg-gold-500 text-dark text-xs uppercase tracking-wider px-4 py-2 font-semibold transition";
+            }
+
+            if(category === 'all') {
+                renderProperties(propertiesDatabase);
+            } else {
+                const filtered = propertiesDatabase.filter(p => p.type === category);
+                renderProperties(filtered);
+            }
+        }
+
+        // Functional Form Processing Event Handlers
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            const toast = document.getElementById('successToast');
+            toast.classList.remove('hidden');
+            
+            // Auto Reset Data Input fields 
+            event.target.reset();
+            
+            // Smoothly collapse toast notification element after timeout delay
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Trigger Initial Application Grid State Render Engine
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProperties(propertiesDatabase);
+        });
+    </script>
+</body>
+</html>
